@@ -18,7 +18,7 @@ public class Db_Connection {
         {
             
             Class.forName("com.mysql.jdbc.Driver");
-            String techworld3g = "jdbc:mysql://localhost:3306/shop";
+            String techworld3g = "jdbc:mysql://localhost:3306/website";
             Connection myConnection = DriverManager.getConnection(techworld3g, "root", "Phong123@");
           
             return myConnection;

@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/T430/Desktop/lab/web/css/style.css</file>
-            <file>file:/C:/Users/T430/Desktop/lab/web/login.jsp</file>
-            <file>file:/C:/Users/T430/Desktop/lab/web/register.jsp</file>
             <file>file:/C:/Users/T430/Desktop/lab/web/index.jsp</file>
-            <file>file:/C:/Users/T430/Desktop/lab/src/java/controllers/RegisterController.java</file>
-            <file>file:/C:/Users/T430/Desktop/lab/web/updateuser.jsp</file>
-            <file>file:/C:/Users/T430/Desktop/lab/web/css/etalage.css</file>
-            <file>file:/C:/Users/T430/Desktop/lab/web/css/form.css</file>
-            <file>file:/C:/Users/T430/Desktop/lab/web/css/megamenu.css</file>
-            <file>file:/C:/Users/T430/Desktop/lab/src/java/controllers/UpdateUserController.java</file>
+            <file>file:/C:/Users/T430/Desktop/lab/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/T430/Desktop/lab/src/java/controllers/ProductController.java</file>
+            <file>file:/C:/Users/T430/Desktop/lab/web/shop.jsp</file>
+            <file>file:/C:/Users/T430/Desktop/lab/web/about.jsp</file>
+            <file>file:/C:/Users/T430/Desktop/lab/src/java/DAO/ProductDAO.java</file>
         </group>
     </open-files>
 </project-private>

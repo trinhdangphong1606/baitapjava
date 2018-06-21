@@ -16,6 +16,7 @@ public class Product {
     String productImage;
     float productPrice;
     String productDescription;
+    String productName2;
 
     
 
@@ -66,6 +67,12 @@ public class Product {
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
-    
+    public String getProductName2() {
+        return productName2;
+    }
+
+    public void setProductName2(String productName2) {
+        this.productName2 = productName2;
+    }
     
 }

@@ -826,8 +826,8 @@ color: #000;}
 	text-indent: -9999px;
 	outline: none;
 	cursor: pointer;
-	background: #08080B url("../images/s_arrow.png") no-repeat 11px 7px;
-	width: 30px;
+	background: #08080B url("../images/s_arrow.png") no-repeat 8px 7px;
+	width: 26px;
 	height: 30px;
 	padding: 8px;
 }	
@@ -1796,7 +1796,7 @@ p.cart a:hover {
 	   padding-right:62%;
    }
    .search input[type="text"] {
-  	   width:80.99%;
+  	   width:50%;
    }
    span.m_8 {
 	    margin: 2% 4% 2% 0;
@@ -1899,7 +1899,7 @@ p.cart a:hover {
 		margin: 1% 0 1% 0%;
 	}
 	.search {
-		width:40.5%;
+		width:45%;
 	}
 	.view .mask, .view .content {
 		left:75px;

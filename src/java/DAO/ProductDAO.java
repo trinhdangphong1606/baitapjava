@@ -41,6 +41,7 @@ public class ProductDAO {
                 p.setProductImage(rs.getString("product_image"));
                 p.setProductPrice(rs.getFloat("product_price"));
                 p.setProductDescription(rs.getString("product_description"));
+                p.setProductName2(rs.getString("product_name2"));
                 
                 ds.add(p);
             }
@@ -82,6 +83,7 @@ public class ProductDAO {
                 p.setProductImage(rs.getString("product_image"));
                 p.setProductPrice(rs.getFloat("product_price"));
                 p.setProductDescription(rs.getString("product_description"));
+                p.setProductName2(rs.getString("product_name2"));
                 
                 ds.add(p);
             }

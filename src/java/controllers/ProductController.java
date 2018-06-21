@@ -38,12 +38,18 @@ public class ProductController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int categoryID = Integer.valueOf(request.getParameter("categoryID"));  
-            int pageID = Integer.valueOf(request.getParameter("page"));  
+            int categoryID = 0;
+            if (request.getParameter("categoryID") != null) {
+                categoryID = Integer.valueOf(request.getParameter("categoryID"));
+            }
+            int pageID = 1;
+            if (request.getParameter("page") != null) {
+                pageID = Integer.valueOf(request.getParameter("page"));
+            }  
             ArrayList<Product> dssp = ProductDAO.getListProduct(categoryID);
-            int numofproperpage = 5;
+            int numofproperpage = 9;
             int numberOfPage = 0;
-            if(dssp.size()%numofproperpage == 0)
+            if(dssp.size() % numofproperpage == 0)
                 numberOfPage = dssp.size()/numofproperpage;
             else
                 numberOfPage = dssp.size()/numofproperpage + 1;
@@ -64,7 +70,8 @@ public class ProductController extends HttpServlet {
             request.setAttribute("dssp", productperpage.toArray(new Product[productperpage.size()])); 
             request.setAttribute("categoryID", categoryID);
             request.setAttribute("numberOfPage", numberOfPage);
-            RequestDispatcher rd=request.getRequestDispatcher("/product.jsp");  
+            request.setAttribute("page", pageID);
+            RequestDispatcher rd=request.getRequestDispatcher("/shop.jsp");  
             rd.forward(request, response);  
         }
     }
