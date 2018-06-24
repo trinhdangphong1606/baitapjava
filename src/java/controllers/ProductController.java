@@ -46,7 +46,11 @@ public class ProductController extends HttpServlet {
             if (request.getParameter("page") != null) {
                 pageID = Integer.valueOf(request.getParameter("page"));
             }  
-            ArrayList<Product> dssp = ProductDAO.getListProduct(categoryID);
+            int sex = 0;
+            if (request.getParameter("sex") != null) {
+                sex = Integer.valueOf(request.getParameter("sex"));
+            }  
+            ArrayList<Product> dssp = ProductDAO.getListProduct(categoryID, sex);
             int numofproperpage = 9;
             int numberOfPage = 0;
             if(dssp.size() % numofproperpage == 0)
@@ -70,6 +74,7 @@ public class ProductController extends HttpServlet {
             request.setAttribute("dssp", productperpage.toArray(new Product[productperpage.size()])); 
             request.setAttribute("categoryID", categoryID);
             request.setAttribute("numberOfPage", numberOfPage);
+            request.setAttribute("sex", sex);
             request.setAttribute("page", pageID);
             RequestDispatcher rd=request.getRequestDispatcher("/shop.jsp");  
             rd.forward(request, response);  

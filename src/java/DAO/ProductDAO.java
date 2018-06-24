@@ -12,13 +12,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Lenovo
  */
 public class ProductDAO {
-    public static ArrayList<Product> getListProduct(int categoryID)
+    public static ArrayList<Product> getListProduct(int categoryID, int sex)
     {
         ArrayList<Product> ds = new ArrayList<>();
         
@@ -28,7 +29,17 @@ public class ProductDAO {
             Db_Connection dbcon = new Db_Connection();
             Connection conn = dbcon.Connection();
             
-            String sql = "select * from product where category_id = '"+ categoryID +"'";
+            String sql = "select * from product";
+            List<String> conditions = new ArrayList<String>();
+            if (categoryID != 0) {
+                conditions.add("category_id = '"+ categoryID +"'");
+            }
+            if (sex != 0) {
+                conditions.add("sex_id = '" + sex + "'");
+            }
+            if (conditions.size() > 0) {
+                sql += " where " + String.join(" and ", conditions);
+            }
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(sql);
             

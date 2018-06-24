@@ -637,6 +637,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="wrap">
                 <div class="rsidebar span_1_of_left">
                     <section  class="sky-form">
+                        <h4>Sex</h4>
+                        <div class="row row1 scroll-pane">
+                            <div class="col col-4">
+                                <form action="<%= request.getContextPath() %>/ProductController">
+                                    <select name="sex">
+                                        <option value="0" selected="selected">All</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                    <button>Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                    <section  class="sky-form">
                         <h4>Occasion</h4>
                         <div class="row row1 scroll-pane">
                             <div class="col col-4">
@@ -766,9 +781,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="#" class="previous">Pages</a></li>
                                 <%
                                     int numberOfPage = (Integer) request.getAttribute("numberOfPage");
+                                    int categoryID = (Integer) request.getAttribute("categoryID");
+                                    int sex = (Integer) request.getAttribute("sex");
                                     for(int i = 1; i < numberOfPage + 1; i++) {
                                 %>
-                                <li><a href="/ProductController?pageID=<%= i %>"><%= i %></a></li>
+                                <li><a href="<%= request.getContextPath() %>/ProductController?categoryID=<%= categoryID %>&sex=<%= sex %>&page=<%= i %>"><%= i %></a></li>
                                 <%
                                     }
                                 %>
@@ -794,7 +811,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <%
                                 for(int j = 0; j < cols; j++)
                                 {
-                                    Product single = products[j];
+                                    Product single = row[j];
                     %>
                         <div class="col_1_of_single1 span_1_of_single1">
                             <a href="single.jsp">                            </a>
@@ -842,11 +859,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                     <%
                                 }
-                            }
                     %>
-                            <div class="clear"></div>
-                        </div>
+                        <div class="clear"></div>
+                    </div>
                     <%
+                            }
                         }
                     %>
                 </div>
