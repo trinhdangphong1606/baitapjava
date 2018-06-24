@@ -11,6 +11,7 @@ import beans.Item;
 import beans.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -77,7 +78,8 @@ public class CartServlet extends HttpServlet {
                         
                         cart.removeToCart(productID);
                         session.setAttribute("cart", cart);
-                        response.sendRedirect("/TechWorld3g/Cart.jsp");
+                        RequestDispatcher rd=request.getRequestDispatcher("/checkout.jsp");  
+                        rd.forward(request, response);  
                         return;
                         
                     }
@@ -86,10 +88,10 @@ public class CartServlet extends HttpServlet {
             catch(Exception ex)
             {
                 ex.printStackTrace();
-                response.sendRedirect("/CategoryController");
+                response.sendRedirect(request.getContextPath() + "/ProductController");
             }
             session.setAttribute("cart", cart);
-            response.sendRedirect("/TechWorld3g/CategoryController");
+            response.sendRedirect(request.getContextPath() + "/ProductController");
         }
     }
 

@@ -1,3 +1,9 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="beans.Item"%>
+<%@page import="beans.Product"%>
+<%@page import="beans.Cart"%>
 <%@page import="beans.User"%>   
 <html>
 <head>
@@ -615,10 +621,54 @@
        </div>
        <div class="login">
          <div class="wrap">
-    	     <h4 class="title">Shopping cart is empty</h4>
-    	     <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.jsp"> here</a> to continue shopping</p>
-    	   </div>
-		</div>
+             <%
+                Cart cart = (Cart) session.getAttribute("cart");
+                if (cart == null) {
+            %>
+            <h4 class="title">Shopping cart is empty</h4>
+            <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.jsp"> here</a> to continue shopping</p>
+            <%
+                } else {
+                    HashMap<Integer, Item> cartItems = cart.getCartItems();
+                    Iterator it = cartItems.entrySet().iterator();
+            %>
+                <table>
+                    <tr>
+                      <th>Product name</th>
+                      <th>Quantity</th> 
+                      <th>Actions</th>
+                    </tr>
+            <%
+                    while (it.hasNext()) {
+                        HashMap.Entry pair = (HashMap.Entry)it.next();
+                        Item cartItem = (Item) pair.getValue();
+                        Product product = cartItem.getProduct();
+            %>
+                <tr>
+                    <td><%= product.getProductName() %></td>
+                    <td><%= cartItem.getQuantity() %></td> 
+                    <td>
+                        <form method="POST" action="<%= request.getContextPath() %>/CartServlet">
+                            <input name="command" value="plus" type="hidden" />
+                            <input name="productID" value="<%= product.getProductID() %>" type="hidden" />
+                            <button>Plus</button>
+                        </form>
+                        <form method="POST" action="<%= request.getContextPath() %>/CartServlet">
+                            <input name="command" value="delete" type="hidden" />
+                            <input name="productID" value="<%= product.getProductID() %>" type="hidden" />
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <%
+                    }
+            %>
+                </table>
+            <%
+                }
+            %>
+         </div>
+        </div>
         <div class="footer">
        	  <div class="footer-top">
        		<div class="wrap">
