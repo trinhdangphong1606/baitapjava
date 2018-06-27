@@ -108,7 +108,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="clear"></div>
  	</div>
    </div>
-   <div class="header-bottom">
+    <div class="header-bottom">
    	<div class="wrap">
    		<!-- start header menu -->
 		<ul class="megamenu skyblue">
@@ -121,12 +121,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
     			</li>				
 				<li><a class="color1" href="ProductController?categoryID=2">Football</a></li>
-                                <li><a class="color2" href="#">Basketball</a></li>
-                                <li><a class="color3" href="#">Running</a></li>
-				<li><a class="color4" href="#">Training</a></li>
-				<li><a class="color5" href="#">Originals</a></li>
-				<li><a class="color6" href="#">Clothing</a></li>
-                                <li><a class="color6" href="#">About Us</a></li>
+                                <li><a class="color2" href="ProductController?categoryID=">Basketball</a></li>
+                                <li><a class="color3" href="ProductController?categoryID=">Running</a></li>
+				<li><a class="color4" href="ProductController?categoryID=">Training</a></li>
+				<li><a class="color5" href="ProductController?categoryID=">Originals</a></li>
+				<li><a class="color6" href="ProductController?categoryID=">Clothing</a></li>
+                                <li><a class="color6" href="about.jsp">About Us</a></li>
 		   </ul>
 		   <div class="clear"></div>
      	</div>

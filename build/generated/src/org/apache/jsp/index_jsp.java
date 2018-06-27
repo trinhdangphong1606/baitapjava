@@ -160,7 +160,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<div class=\"clear\"></div>\n");
       out.write(" \t</div>\n");
       out.write("   </div>\n");
-      out.write("   <div class=\"header-bottom\">\n");
+      out.write("    <div class=\"header-bottom\">\n");
       out.write("   \t<div class=\"wrap\">\n");
       out.write("   \t\t<!-- start header menu -->\n");
       out.write("\t\t<ul class=\"megamenu skyblue\">\n");
@@ -178,7 +178,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t<li><a class=\"color4\" href=\"#\">Training</a></li>\n");
       out.write("\t\t\t\t<li><a class=\"color5\" href=\"#\">Originals</a></li>\n");
       out.write("\t\t\t\t<li><a class=\"color6\" href=\"#\">Clothing</a></li>\n");
-      out.write("                                <li><a class=\"color6\" href=\"#\">About Us</a></li>\n");
+      out.write("                                <li><a class=\"color6\" href=\"about.jsp\">About Us</a></li>\n");
       out.write("\t\t   </ul>\n");
       out.write("\t\t   <div class=\"clear\"></div>\n");
       out.write("     \t</div>\n");

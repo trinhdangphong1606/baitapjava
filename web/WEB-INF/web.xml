@@ -13,6 +13,10 @@
         <servlet-class>controllers.ProductController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>controllers.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>UpdateUserController</servlet-name>
         <servlet-class>controllers.UpdateUserController</servlet-class>
     </servlet>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>UpdateUserController</servlet-name>
         <url-pattern>/UpdateUserController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/CheckoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
