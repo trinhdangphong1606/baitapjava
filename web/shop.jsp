@@ -123,23 +123,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    		<!-- start header menu -->
 		<ul class="megamenu skyblue">
 		    <li><a class="color1" href="index.jsp">Home</a></li>
-                    
-                    <li class="grid"><a class="color2" href="#">Men</a>
-				
-				</li>
-  			   <li class="active grid"><a class="color4" href="#">Women</a>
-				
-    			</li>				
-				<li><a class="color1" href="ProductController?categoryID=1">Football</a></li>
-                                <li><a class="color2" href="ProductController?categoryID=3">Basketball</a></li>
-                                <li><a class="color3" href="ProductController?categoryID=2">Running</a></li>
-				<li><a class="color4" href="ProductController?categoryID=4">Training</a></li>
-				<li><a class="color5" href="ProductController?categoryID=6">Originals</a></li>
-				<li><a class="color6" href="ProductController?categoryID=5">Clothing</a></li>
-                                <li><a class="color6" href="about.jsp">About Us</a></li>
+                    <li><a class="color1" href="ProductController?categoryID=1">Football</a></li>
+                    <li><a class="color2" href="ProductController?categoryID=3">Basketball</a></li>
+                    <li><a class="color3" href="ProductController?categoryID=2">Running</a></li>
+                    <li><a class="color4" href="ProductController?categoryID=4">Training</a></li>
+                    <li><a class="color5" href="ProductController?categoryID=6">Originals</a></li>
+                    <li><a class="color6" href="ProductController?categoryID=5">Clothing</a></li>
+                    <li><a class="color6" href="about.jsp">About Us</a></li>
 		   </ul>
 		   <div class="clear"></div>
-     	</div>
+     	</div>  
        </div>
         <div class="login">
             <div class="wrap">
@@ -322,14 +315,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     Product single = row[j];
                     %>
                         <div class="col_1_of_single1 span_1_of_single1">
-                            <a href="single.jsp">                            </a>
-
                                 <div class="view1 view-fifth1">
                                     <div class="top_box">
                                         <h3 class="m_1"><%= single.getProductName() %></h3>
                                         <p class="m_2"><%= single.getProductName2() %>   </p>
                                         <div class="grid_img">
-                                            <div class="css3"><img src="images/pic11.jpg" alt=""/></div>
+                                            <div class="css3">
+                                                <a href="<%= request.getContextPath() %>/ProductController?productID=<%= single.getProductID() %>">
+                                                    <img src="hinh/<%=single.getProductImage() %>" alt=""/>
+                                                </a>
+                                            </div>
                                             <div class="mask1">
                                                 <div class="info">Quick View</div>
                                             </div>
